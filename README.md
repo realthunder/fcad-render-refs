@@ -14,6 +14,10 @@ not failed, when this checkout is absent.
     raster/   the committed scene, raster only: one camera (iso), the
               five pipeline stages (RenderDebug_ViewMode 0-4). Runs in
               the default ctest.
+    raster-flat/  the same scene and stages captured with
+              FC_RENDER_TEST_BG=0: the environment still lights the model
+              but is not drawn, so the frame is the model on a flat
+              ground. Runs in the default ctest.
     cycles/   the same scene and camera path traced on the CPU, plus the
               mode0 beauty frame beside it (the sidecar of that frame is
               what the camera is restaged from). Behind the
@@ -26,7 +30,17 @@ not failed, when this checkout is absent.
               environment lights the model but is not drawn, so the
               frame is the model. Behind "render-heavy".
 
-The chess sets were blessed last, on 2026-09-05, after the defect that
+`raster-flat` was blessed last, on 2026-09-05, and its first blessing
+was wrong in a way worth recording: `render-test-scene.py` turned the
+viewer gradient off but left `Render_PBREnvBackground` on (it defaults to
+on), and the drawn environment sits over the gradient -- so the "flat"
+frame was the lit frame, differing on 7.9% of pixels with a maximum
+channel delta of 1. The scene now sets `PBREnvBackground` from the same
+flag the chess scene does, and the blessed legs diverge on 79.5% of the
+beauty pixels with depth, normal, AO and shadow byte-identical. A `-flat`
+set that compares near-identical to its sibling has this bug.
+
+The chess sets were blessed on 2026-09-05, after the defect that
 kept them out was fixed: a piece of the set intermittently rendered
 with no material on the raster leg, because a frame dump could be
 consumed by a frame drawn while that material's shader was still
@@ -55,6 +69,9 @@ repo. The order matters:
 
     # 3. bless the SECOND one
     cp /tmp/g2/*.png /tmp/g2/*.json raster/
+
+The flat legs are the same three steps with `FC_RENDER_TEST_BG=0` set on
+both captures, blessed into `raster-flat/` and `chess-flat/`.
 
 **Bless the second directory, never the first.** The sidecar stores the
 camera as Coin ASCII, which keeps about 8 significant digits, so a
