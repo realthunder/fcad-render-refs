@@ -18,15 +18,22 @@ not failed, when this checkout is absent.
               mode0 beauty frame beside it (the sidecar of that frame is
               what the camera is restaged from). Behind the
               "render-heavy" ctest label.
+    chess/    the MaterialX chess set (scripts/render-test-chess.py), iso
+              camera, raster beauty frame plus the CPU path-traced one,
+              with the HDR environment drawn behind the model. Behind
+              "render-heavy".
+    chess-flat/  the same scene captured with FC_RENDER_TEST_BG=0: the
+              environment lights the model but is not drawn, so the
+              frame is the model. Behind "render-heavy".
 
-There is deliberately no `chess/`. `RenderGoldenChess_tests_run` exists
-and is registered, but a piece of the MaterialX chess set intermittently
-renders with no material at all on the raster leg -- 2 runs in 7, the
-same build and the same restaged camera, nothing logged -- so no run of
-it can honestly be called a reference. The test skips while this
-directory is absent, which is the intended behaviour and not a gap to be
-filled by blessing a run that happened to look right. See
-`docs/RenderDebug.md` section 5.2a.
+The chess sets were blessed last, on 2026-09-05, after the defect that
+kept them out was fixed: a piece of the set intermittently rendered
+with no material on the raster leg, because a frame dump could be
+consumed by a frame drawn while that material's shader was still
+compiling. The dump now waits for a complete frame, and both sets are
+restaged captures blessed the same way as the others. See
+`docs/RenderDebug.md` section 5.2a for the chase and what a lone
+divergent piece would mean now.
 
 Each set is PNGs plus a `<name>.png.json` sidecar per raster capture. The
 sidecar is the test manifest: `render_verify.py` restages the camera, the
