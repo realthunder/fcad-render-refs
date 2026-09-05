@@ -19,6 +19,15 @@ not failed, when this checkout is absent.
               what the camera is restaged from). Behind the
               "render-heavy" ctest label.
 
+There is deliberately no `chess/`. `RenderGoldenChess_tests_run` exists
+and is registered, but a piece of the MaterialX chess set intermittently
+renders with no material at all on the raster leg -- 2 runs in 7, the
+same build and the same restaged camera, nothing logged -- so no run of
+it can honestly be called a reference. The test skips while this
+directory is absent, which is the intended behaviour and not a gap to be
+filled by blessing a run that happened to look right. See
+`docs/RenderDebug.md` section 5.2a.
+
 Each set is PNGs plus a `<name>.png.json` sidecar per raster capture. The
 sidecar is the test manifest: `render_verify.py` restages the camera, the
 `Render_*` properties and the recorded preferences from it, so a golden
