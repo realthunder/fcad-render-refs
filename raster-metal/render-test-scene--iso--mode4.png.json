@@ -1,0 +1,163 @@
+{
+    "backend": "bgfx - Metal",
+    "build": {
+        "revision": "43723 (Git)",
+        "version": "0.22"
+    },
+    "camera": "#Inventor V2.1 ascii\n\n\nOrthographicCamera {\n  viewportMapping ADJUST_CAMERA\n  position 25.393974 -25.393961 36.993965\n  orientation 0.74290603 0.30772206 0.59447277  1.2171158\n  nearDistance 1.6437175\n  farDistance 86.408257\n  aspectRatio 1\n  focalDistance 43.983635\n  height 87.96727\n\n}\n",
+    "capture": {
+        "file": "/private/tmp/claude-501/-Users-mymac-works-sw-fcad/93f32781-b380-4174-b008-4e1cab2c17c0/scratchpad/rv-metal4/render-test-scene--iso--mode4.png",
+        "mode": 4,
+        "source": "renderer",
+        "time": "2026-09-07T20:03:49"
+    },
+    "device": "Metal / vendor 0x8086 device 0x1622",
+    "devicePixelRatio": 1,
+    "msaa": 0,
+    "preferences": {
+        "View": {
+            "bool": {
+                "CornerCoordSystem": false,
+                "ShowFPS": false,
+                "ShowNaviCube": false
+            },
+            "int": {
+                "RenderCache": 3
+            }
+        },
+        "View/Render": {
+            "bool": {
+                "AO": true,
+                "Bloom": false,
+                "Caustics": false,
+                "DebugFreezeFrame": true,
+                "GroundReflection": false,
+                "PBR": true,
+                "PBREnvBackground": true,
+                "SunDisc": false,
+                "Volumetric": false,
+                "WaterSurface": false
+            },
+            "float": {
+                "AOIntensity": 1,
+                "LightIntensity": 0.55
+            },
+            "string": {
+                "Type": "bgfx - Metal"
+            }
+        }
+    },
+    "properties": {
+        "RenderShadow_Epsilon": 1e-05,
+        "RenderShadow_GroundAutoPosition": true,
+        "RenderShadow_GroundBackFaceCull": true,
+        "RenderShadow_GroundBumpMap": "",
+        "RenderShadow_GroundColor": "(0.4901960790157318, 0.4901960790157318, 0.4901960790157318, 1.0)",
+        "RenderShadow_GroundPlacement": "Placement [Pos=(0,0,0), Yaw-Pitch-Roll=(0,0,0)]",
+        "RenderShadow_GroundShading": true,
+        "RenderShadow_GroundSizeAuto": true,
+        "RenderShadow_GroundSizeFollowCamera": true,
+        "RenderShadow_GroundSizeScale": 2,
+        "RenderShadow_GroundSizeX": "100.0 mm",
+        "RenderShadow_GroundSizeY": "100.0 mm",
+        "RenderShadow_GroundTexture": "",
+        "RenderShadow_GroundTextureSize": "100.0 mm",
+        "RenderShadow_GroundTransparency": 1,
+        "RenderShadow_Precision": 1,
+        "RenderShadow_ShowGround": false,
+        "RenderShadow_SmoothBorder": 40,
+        "RenderShadow_SpreadSampleSize": 0,
+        "RenderShadow_SpreadSize": 0,
+        "RenderShadow_Threshold": 0,
+        "RenderShadow_Transparency": 0.2,
+        "Render_AO": true,
+        "Render_AOIntensity": 1,
+        "Render_AOMethod": "SSAO",
+        "Render_AORadius": 0,
+        "Render_AOResolution": 1,
+        "Render_AOSlices": 9,
+        "Render_AOSteps": 3,
+        "Render_BackgroundReleaseDelay": 1000,
+        "Render_Bloom": false,
+        "Render_BloomIntensity": 1,
+        "Render_BloomRadius": 1,
+        "Render_BloomThreshold": 0.9,
+        "Render_BumpScale": 1,
+        "Render_Caustics": false,
+        "Render_CausticsIntensity": 1,
+        "Render_CausticsScale": 0,
+        "Render_CausticsSpeed": 1,
+        "Render_Cavity": true,
+        "Render_CavityRadius": 1,
+        "Render_CavityRidge": 0.5,
+        "Render_CavityValley": 1,
+        "Render_CoarseTessellation": 2,
+        "Render_EffectResolution": 1,
+        "Render_Exposure": 1,
+        "Render_GroundReflection": false,
+        "Render_GroundReflectionIntensity": 0.4,
+        "Render_LevelTolerance": 2,
+        "Render_Light": true,
+        "Render_LightColor": "(0.9411764740943909, 0.9921568632125854, 1.0, 1.0)",
+        "Render_LightCutOffAngle": 45,
+        "Render_LightDirection": "Vector (-1.0, -1.0, -1.0)",
+        "Render_LightDropOffRate": 0,
+        "Render_LightIntensity": 0.55,
+        "Render_LightPosition": "Vector (0.0, 0.0, 0.0)",
+        "Render_LightSpot": false,
+        "Render_Matcap": false,
+        "Render_MatcapPreset": "Studio",
+        "Render_MatcapTint": 1,
+        "Render_OutputTransform": "sRGB",
+        "Render_PBR": true,
+        "Render_PBREnvBackground": true,
+        "Render_PBREnvBlur": 0.25,
+        "Render_PBREnvEmbed": true,
+        "Render_PBREnvImage": "",
+        "Render_PBREnvImageData": "",
+        "Render_PBREnvIntensity": 1,
+        "Render_PBREnvPreset": "Gradient",
+        "Render_PBRFromSpecular": true,
+        "Render_PBRMetallic": 0,
+        "Render_PBRRoughness": 0,
+        "Render_Parallax": true,
+        "Render_Shadow": true,
+        "Render_ShininessMapping": "Full range",
+        "Render_SunDisc": false,
+        "Render_SunDiscSize": 1.5,
+        "Render_TemporalAccum": false,
+        "Render_TemporalAccumSamples": 32,
+        "Render_Volumetric": false,
+        "Render_VolumetricDensity": 0,
+        "Render_VolumetricIntensity": 1,
+        "Render_WaterAbsorption": 0.2,
+        "Render_WaterImpactLife": 1.1,
+        "Render_WaterImpactStrength": 1,
+        "Render_WaterInscatter": 0.5,
+        "Render_WaterPlanarReflection": true,
+        "Render_WaterReflection": true,
+        "Render_WaterRefraction": true,
+        "Render_WaterRippleDensity": 1,
+        "Render_WaterRippleType": "Waves",
+        "Render_WaterShadow": true,
+        "Render_WaterShadowWobble": 1,
+        "Render_WaterSurface": false,
+        "Render_WaterWaveScale": 0,
+        "Render_WaterWaveSpeed": 1,
+        "Render_WaterWaveStrength": 0.3
+    },
+    "stats": {
+        "avgColor": [
+            224.35171508789062,
+            224.35171508789062,
+            224.35171508789062
+        ],
+        "geometryPixels": 108191,
+        "height": 608,
+        "width": 858
+    },
+    "viewportSize": [
+        858,
+        608
+    ]
+}
