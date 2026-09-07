@@ -29,6 +29,12 @@ not failed, when this checkout is absent.
     chess-flat/  the same scene captured with FC_RENDER_TEST_BG=0: the
               environment lights the model but is not drawn, so the
               frame is the model. Behind "render-heavy".
+    <set>-metal/  the same set captured on the Metal backend
+              (raster-metal, raster-flat-metal, chess-metal,
+              chess-flat-metal). A golden is a picture of ONE backend:
+              tests/render/CMakeLists.txt looks for <set>-metal on
+              Apple and registers nothing at all until it exists, so
+              these are what a macOS ctest actually runs against.
 
 `raster-flat` was blessed last, on 2026-09-05, and its first blessing
 was wrong in a way worth recording: `render-test-scene.py` turned the
@@ -48,6 +54,22 @@ compiling. The dump now waits for a complete frame, and both sets are
 restaged captures blessed the same way as the others. See
 `docs/RenderDebug.md` section 5.2a for the chase and what a lone
 divergent piece would mean now.
+
+The Metal sets were blessed on macOS 12 / Intel iGPU (vendor 0x8086
+device 0x1622): the raster pair on 2026-09-07, the chess pair the same
+day, once the harness could stage that scene there at all (the scene
+script hard-coded "bgfx - OpenGL", which Apple's GL 2.1 profile cannot
+run, and it reached for pivy, which the macOS conda env does not have).
+Both chess sets are restaged from their OpenGL siblings and hold the
+RASTER frame only -- that box has BUILD_CYCLES off -- and a golden
+holding no traced frame is registered without the traced leg, so the
+pair stays honest until someone blesses one with Cycles built.
+
+Against their OpenGL siblings the chess sets diverge on 0.33% of the
+beauty pixels (max channel delta 140, mean 0.16), which is the same
+cross-backend residual the raster pair shows at 0.35%. The lit and flat
+Metal pair cross-checks against the OpenGL pair to four decimal places:
+77.7928% of pixels against 77.7924%.
 
 Each set is PNGs plus a `<name>.png.json` sidecar per raster capture. The
 sidecar is the test manifest: `render_verify.py` restages the camera, the
@@ -96,6 +118,15 @@ integrator default applies, and denoising is enabled only on the viewport
 path -- which is what makes a path-traced golden reproducible at all. Two
 devices do not produce identical pixels, so a set blessed on CUDA cannot
 be compared against a CPU run.
+
+A sidecar also records the ABSOLUTE path of an asset the scene set --
+`Render_PBREnvImage`, the chess set's HDR environment -- and no other
+box has that path. `render_verify.py` relocates such a path onto the
+current checkout when it restages (the longest tail of it that exists
+under the repository), so a set blessed on one box restages on another.
+Without that the setting took the dead string SILENTLY, the environment
+was simply missing from the frame, and the chess set restaged from a
+Linux blessing diverged on 99.98% of its pixels.
 
 The sidecars' `capture.file` is reduced to a basename before blessing;
 as captured it holds the absolute path of whatever scratch directory the

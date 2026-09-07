@@ -6,7 +6,7 @@
     },
     "camera": "#Inventor V2.1 ascii\n\n\nOrthographicCamera {\n  viewportMapping ADJUST_CAMERA\n  position 25.393974 -25.393961 36.993965\n  orientation 0.74290603 0.30772206 0.59447277  1.2171158\n  nearDistance 1.6437175\n  farDistance 86.408257\n  aspectRatio 1\n  focalDistance 43.983635\n  height 87.96727\n\n}\n",
     "capture": {
-        "file": "/private/tmp/claude-501/-Users-mymac-works-sw-fcad/93f32781-b380-4174-b008-4e1cab2c17c0/scratchpad/rv-flat/render-test-scene--iso--mode1.png",
+        "file": "render-test-scene--iso--mode1.png",
         "mode": 1,
         "source": "renderer",
         "time": "2026-09-07T20:13:58"
