@@ -1,16 +1,17 @@
 {
     "backend": "bgfx - OpenGL",
     "build": {
-        "revision": "35485 +8165 (Git)",
+        "revision": "35485 +8254 (Git)",
         "version": "0.22"
     },
     "camera": "#Inventor V2.1 ascii\n\n\nOrthographicCamera {\n  viewportMapping ADJUST_CAMERA\n  position 25.393974 -25.393961 36.993965\n  orientation 0.74290603 0.30772206 0.59447277  1.2171158\n  nearDistance 1.6437175\n  farDistance 86.408257\n  aspectRatio 1\n  focalDistance 43.983635\n  height 87.96727\n\n}\n",
     "capture": {
-        "file": "render-test-scene--iso--mode1.png",
+        "file": "/home/thunder/works/sw/fcad/build/conda-relwithdebinfo-801/Testing/render/raster-flat/render-test-scene--iso--mode1.png",
         "mode": 1,
         "source": "renderer",
-        "time": "2026-09-05T16:13:07"
+        "time": "2026-09-08T09:03:39"
     },
+    "device": "OpenGL 2.1 / llvmpipe (LLVM 20.1.2, 256 bits) / 4.5 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.2 / vendor 0x0000 device 0x0000",
     "devicePixelRatio": 1,
     "msaa": 0,
     "preferences": {
