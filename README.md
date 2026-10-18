@@ -134,6 +134,16 @@ run used, which is noise in a committed reference. Nothing reads it --
 restaging uses `camera`, `properties` and `preferences`, and the capture
 name comes from the filename.
 
+`raster` and `raster-flat` were re-blessed on 2026-10-19, after the
+cavity shader was changed on purpose on 2026-10-09 (fcad `66ccd277b9`,
+`dfdfc04c5c`): restaged from the sets of 2026-09-08, so the camera is
+theirs, and a second capture restaged from the new sets compares
+byte-exact at `--tol 0 --frac 0`. Only the beauty frame changed -- 0.13%
+of its pixels, max channel delta 26, all on creases; depth, normal, AO
+and shadow are byte-identical to the old sets. The sidecars gained the
+preferences recorded since (`AntiAliasing`, `Render_MatcapStripes`). The
+Metal sets were not re-blessed and still hold the old cavity shader.
+
 ## Provenance of the current set
 
 Blessed 2026-09-05 on the conda RelWithDebInfo tree (OCCT 8.0.1), headless
